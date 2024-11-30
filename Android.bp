@@ -3836,28 +3836,15 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libcacao_common.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/libcacao_common.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "both",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -3906,47 +3893,6 @@ cc_prebuilt_library_shared {
                 "libqmi_encdec",
                 "libprotobuf-cpp-full-3.9.1-vendorcompat",
                 "libhardware",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libcammw_util",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libcammw_util.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libhardware",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libcammw_util.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libhardware",
-                "libc++",
                 "libc",
                 "libm",
                 "libdl",
@@ -8613,53 +8559,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libsomc_camerapal",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libsomc_camerapal.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libutils",
-                "libutilscallstack",
-                "libidd",
-                "libprotobuf-c-idd",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libsomc_camerapal.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libutils",
-                "libutilscallstack",
-                "libidd",
-                "libprotobuf-c-idd",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libsomc_thermal",
     owner: "sony",
     strip: {
@@ -10121,58 +10020,6 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcutils",
                 "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    relative_install_path: "soundfx",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libswdap",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/soundfx/libswdap.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libaudioutils",
-                "libdapparamstorage",
-                "libhidlbase",
-                "libhidltransport",
-                "vendor.dolby.hardware.dms@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/soundfx/libswdap.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libaudioutils",
-                "libdapparamstorage",
-                "libhidlbase",
-                "libhidltransport",
-                "vendor.dolby.hardware.dms@1.0",
                 "libc++",
                 "libc",
                 "libm",
@@ -11843,7 +11690,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.somc.hardware.miscta@1.0",
+    name: "vendor.somc.hardware.miscta@1.0_vendor",
+    stem: "vendor.somc.hardware.miscta@1.0",
     owner: "sony",
     strip: {
         none: true,
@@ -12189,34 +12037,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libexcal_bokeh_comp_plugin",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/camera/libexcal_bokeh_comp_plugin.so",
-            ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libmorpho_dual_camera",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    relative_install_path: "camera",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libexcal_ckb_service_plugin",
     owner: "sony",
     strip: {
@@ -12227,19 +12047,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_ckb_service_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libdevice_security_vendor",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12256,19 +12067,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_color_ctrl_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12285,18 +12087,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_debug_display_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12313,19 +12107,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_exposure_ctrl_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12342,50 +12127,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_eye_stabilizer_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "liblog",
-                "libsomc_cornfrosty",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
-    relative_install_path: "camera",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libexcal_face_detector_plugin",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/camera/libexcal_face_detector_plugin.so",
-            ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "liblog",
-                "libcammw",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12402,19 +12147,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_flicker_detector_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12431,18 +12167,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_focus_stats_conv_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12459,19 +12187,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_food_comp_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libsony_naruto",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12488,19 +12207,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_food_detector_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libsony_fooddetect",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12517,47 +12227,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_fusion_comp_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
-    relative_install_path: "camera",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libexcal_hal_ctrl_plugin",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/camera/libexcal_hal_ctrl_plugin.so",
-            ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libcammw",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12574,22 +12247,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_hdr_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libhigh_dynamic_range",
-                "libmpbase",
-                "libarcsoft_hdr_adapter",
-                "libarcsoft_low_light_hdr",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12606,47 +12267,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_idt_ctrl_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
-    relative_install_path: "camera",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libexcal_image_conv_plugin",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/camera/libexcal_image_conv_plugin.so",
-            ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libcammw",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12663,46 +12287,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_iq_ctrl_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
-    relative_install_path: "camera",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libexcal_jpeg_enc_plugin",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/camera/libexcal_jpeg_enc_plugin.so",
-            ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12719,20 +12307,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_lens_ctrl_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libz",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12749,18 +12327,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_motion_detector_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12777,19 +12347,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_motion_estimation_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12806,19 +12367,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_multiframe_nr_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12835,18 +12387,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_object_detector_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12863,19 +12407,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_object_tracker_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12892,18 +12427,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_prc_image_conv_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12920,47 +12447,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_process_ctrl_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
-    relative_install_path: "camera",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libexcal_raw_conv_plugin",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/camera/libexcal_raw_conv_plugin.so",
-            ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libcammw",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -12977,75 +12467,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_raw_dump_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
-    relative_install_path: "camera",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libexcal_raw_proc_plugin",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/camera/libexcal_raw_proc_plugin.so",
-            ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libcammw",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    relative_install_path: "camera",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libexcal_req_ctrl_plugin",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/camera/libexcal_req_ctrl_plugin.so",
-            ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -13062,19 +12487,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_scene_detector_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -13091,18 +12507,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_snapshot_ctrl_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -13119,18 +12527,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_splitter_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -13147,18 +12547,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/camera/libexcal_stream_ctrl_plugin.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     relative_install_path: "camera",
     prefer: true,
     soc_specific: true,
@@ -13340,18 +12732,6 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libarcsoft_hdr_adapter.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libhigh_dynamic_range",
-                "libarcsoft_low_light_hdr",
-                "libmpbase",
-                "libc",
-                "libm",
-                "libc++",
-                "libdl",
-                "liblog",
-            ],
         },
     },
     compile_multilib: "32",
@@ -13418,59 +12798,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libcacao_process_ctrl.so",
             ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libexcal_system",
-                "libcacao_common",
-                "libqdMetaData",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libcammw",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libcammw.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcamera_metadata",
-                "libcutils",
-                "libhardware",
-                "libutils",
-                "libmiscta",
-                "libsomc_camerapal",
-                "libsensorndkbridge",
-                "libhidlbase",
-                "libsomc_alfortlpserv",
-                "libsomc_pdnserv",
-                "libbinder_ndk",
-                "android.hardware.light-V1-ndk_platform",
-                "vendor.semc.hardware.extlight-V1-ndk_platform",
-                "liblights-core",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -13514,81 +12845,6 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libexcal_core",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libexcal_core.so",
-            ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libcammw_util",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libexcal_system",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libexcal_system.so",
-            ],
-            shared_libs: [
-                "libsomc_camerapal",
-                "libexcal_core",
-                "libcammw",
-                "libjpeg",
-                "libsomc_raisin",
-                "libsomc_raisincl",
-                "libsomc_marble",
-                "libsomc_spica",
-                "libsomc_toppo",
-                "libsomc_mugichoco",
-                "libsomc_melonpan",
-                "libsomc_yummy",
-                "libsomc_bordeaux",
-                "libsomc_canele",
-                "libsomc_buttercake",
-                "libsomc_shortcake",
-                "libsomc_pretzchoco",
-                "libsomc_sumomo",
-                "libsomc_cheesescone",
-                "libsomc_financier",
-                "libsomc_mln",
-                "libsomc_chokoballkeymgr",
-                "libsomc_parisbrest",
-                "libsomc_soda",
-                "libsomc_angelpie",
                 "libc++",
                 "libc",
                 "libm",
@@ -13887,19 +13143,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_angelpie.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_angelpie_impl",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -13915,20 +13162,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_angelpie_impl.so",
             ],
-            shared_libs: [
-                "libsymphony-cpu",
-                "libsymphonypower",
-                "libSNPE",
-                "libfastcvopt",
-                "libsomc_chokoballkeymgr",
-                "libc",
-                "libdl",
-                "liblog",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -13944,22 +13181,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_bordeaux.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_bordeauxrsc",
-                "libOpenCL",
-                "libsomc_chokoballkeymgr",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -13975,14 +13200,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_bordeauxrsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -13998,22 +13219,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_buttercake.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_buttercakersc",
-                "libsomc_chokoballkeymgr",
-                "libOpenCL",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14029,14 +13238,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_buttercakersc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14052,26 +13257,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_camerahal.so",
             ],
-            shared_libs: [
-                "libutils",
-                "libui",
-                "liblog",
-                "libcutils",
-                "libbinder",
-                "libsync",
-                "libsomc_camerapal",
-                "libexcal_system",
-                "libexcal_core",
-                "libqdMetaData",
-                "local_libcamera_metadata",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14087,22 +13276,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_canele.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_canelersc",
-                "libOpenCL",
-                "libsomc_chokoballkeymgr",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14118,14 +13295,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_canelersc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14141,22 +13314,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_cheesescone.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_cheesesconersc",
-                "libsomc_chokoballkeymgr",
-                "libOpenCL",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14172,14 +13333,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_cheesesconersc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14195,19 +13352,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_chokoballcmn.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libOpenCL",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14223,45 +13371,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_chokoballkeymgr.so",
             ],
-            shared_libs: [
-                "libcrypto",
-                "libcutils",
-                "liblog",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libsomc_chokoballpal",
-    owner: "sony",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libsomc_chokoballpal.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcammw_util",
-                "libutils",
-                "libui",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14303,22 +13416,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_financier.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_financierrsc",
-                "libsomc_chokoballkeymgr",
-                "libOpenCL",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14334,14 +13435,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_financierrsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14357,20 +13454,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_madeleine_core.so",
             ],
-            shared_libs: [
-                "libSNPE",
-                "libsymphony-cpu",
-                "libsymphonypower",
-                "libsomc_chokoballkeymgr",
-                "libfastcvopt",
-                "libc",
-                "libm",
-                "libdl",
-                "liblog",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14386,22 +13473,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_marble.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_marblersc",
-                "libOpenCL",
-                "libsomc_chokoballkeymgr",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14417,14 +13492,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_marblersc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14440,22 +13511,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_melonpan.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_melonpanrsc",
-                "libOpenCL",
-                "libsomc_chokoballkeymgr",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14471,14 +13530,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_melonpanrsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14494,20 +13549,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_mln.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_madeleine_core",
-                "libSNPE",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14523,22 +13568,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_mugichoco.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_mugichocorsc",
-                "libOpenCL",
-                "libsomc_chokoballkeymgr",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14554,14 +13587,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_mugichocorsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14577,22 +13606,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_parisbrest.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_parisbrestrsc",
-                "libsomc_chokoballkeymgr",
-                "libOpenCL",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14608,14 +13625,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_parisbrestrsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14631,15 +13644,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_pdnserv.so",
             ],
-            shared_libs: [
-                "libdl",
-                "liblog",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14655,22 +13663,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_pretzchoco.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_pretzchocorsc",
-                "libsomc_chokoballkeymgr",
-                "libOpenCL",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14686,14 +13682,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_pretzchocorsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14709,22 +13701,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_raisin.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_raisinrsc",
-                "libOpenCL",
-                "libsomc_chokoballkeymgr",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14740,22 +13720,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_raisincl.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_raisinclrsc",
-                "libsomc_chokoballkeymgr",
-                "libOpenCL",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14771,14 +13739,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_raisinclrsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14794,14 +13758,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_raisinrsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14817,22 +13777,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_shortcake.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_shortcakersc",
-                "libOpenCL",
-                "libsomc_chokoballkeymgr",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14848,14 +13796,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_shortcakersc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14871,19 +13815,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_soda.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_soda_impl",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14899,20 +13834,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_soda_impl.so",
             ],
-            shared_libs: [
-                "libsymphony-cpu",
-                "libsymphonypower",
-                "libSNPE",
-                "libfastcvopt",
-                "libsomc_chokoballkeymgr",
-                "libc",
-                "libdl",
-                "liblog",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14928,22 +13853,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_spica.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_spicarsc",
-                "libsomc_chokoballcmn",
-                "libOpenCL",
-                "libsomc_chokoballkeymgr",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14959,14 +13872,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_spicarsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -14982,22 +13891,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_sumomo.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_sumomorsc",
-                "libsomc_chokoballkeymgr",
-                "libOpenCL",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -15013,14 +13910,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_sumomorsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -15036,22 +13929,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_toppo.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_topporsc",
-                "libOpenCL",
-                "libsomc_chokoballkeymgr",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -15067,14 +13948,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_topporsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -15090,22 +13967,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_yummy.so",
             ],
-            shared_libs: [
-                "libsomc_chokoballpal",
-                "libsomc_chokoballcmn",
-                "libsomc_yummyrsc",
-                "libOpenCL",
-                "libsomc_chokoballkeymgr",
-                "liblog",
-                "libGLESv3",
-                "libEGL",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -15121,14 +13986,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsomc_yummyrsc.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -15144,14 +14005,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsony_fooddetect.so",
             ],
-            shared_libs: [
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -15167,15 +14024,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/libsony_naruto.so",
             ],
-            shared_libs: [
-                "liblog",
-                "libdl",
-                "libc",
-                "libm",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -16201,28 +15053,10 @@ cc_prebuilt_library_shared {
             srcs: [
                 "proprietary/vendor/lib/vendor.somc.hardware.camera.cacao@3.2-impl.so",
             ],
-            shared_libs: [
-                "libhidlbase",
-                "libhidltransport",
-                "libutils",
-                "liblog",
-                "libcutils",
-                "android.hardware.graphics.mapper@3.0",
-                "libsomc_camerapal",
-                "vendor.somc.hardware.camera.provider@1.0",
-                "vendor.somc.hardware.camera.cacao@3.0",
-                "vendor.somc.hardware.camera.cacao@3.1",
-                "vendor.somc.hardware.camera.cacao@3.2",
-                "libcacao_common",
-                "libcacao_process_ctrl",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
         },
     },
     compile_multilib: "32",
+    check_elf_files: false,
     prefer: true,
     soc_specific: true,
 }
@@ -18003,6 +16837,34 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libQSEEComAPI",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libhdr_tm",
+    owner: "sony",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libhdr_tm.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libexpat",
+                "libhardware",
                 "libc++",
                 "libc",
                 "libm",
@@ -25741,6 +24603,44 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "vendor.semc.hardware.secd@1.0-service",
+    owner: "sony",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/vendor.semc.hardware.secd@1.0-service",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libhidlbase",
+                "libhidltransport",
+                "libmiscta",
+                "vendor.somc.hardware.security.secd@1.0",
+                "libcrypto",
+                "libsqlite",
+                "libtpm",
+                "libkeymasterutils",
+                "libkeymasterprovision",
+                "libkeymasterdeviceutils",
+                "libqtikeymaster4",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "vendor.semc.system.idd@1.0-service",
     owner: "sony",
     target: {
@@ -26101,6 +25001,39 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "keyprovd",
+    owner: "sony",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/keyprovd",
+            ],
+            shared_libs: [
+                "libsuntory",
+                "libcutils",
+                "liblog",
+                "libcrypto",
+                "libkeymasterutils",
+                "libkeymasterprovision",
+                "libkeymasterdeviceutils",
+                "libmiscta",
+                "libqtikeymaster4",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "ks",
     owner: "sony",
     target: {
@@ -26245,6 +25178,34 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "mlog_qmi_service",
+    owner: "sony",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/mlog_qmi_service",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libqmi_csi",
+                "libqmi_common_so",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "mmid",
     owner: "sony",
     target: {
@@ -26369,6 +25330,38 @@ cc_prebuilt_binary {
                 "libqti_vndfwk_detect",
                 "libcneapiclient",
                 "libbinder",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "pd-mapper",
+    owner: "sony",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/pd-mapper",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libjson",
+                "libqmi_cci",
+                "libqmi_common_so",
+                "libqmi_encdec",
+                "libqmi_csi",
                 "libc++",
                 "libc",
                 "libm",
@@ -26607,6 +25600,35 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "qseecomd",
+    owner: "sony",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/qseecomd",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libQSEEComAPI",
+                "libdrmfs",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "qti",
     owner: "sony",
     target: {
@@ -26628,6 +25650,63 @@ cc_prebuilt_binary {
                 "libqmi_encdec",
                 "libqcmaputils",
                 "libc++",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "rmt_storage",
+    owner: "sony",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/rmt_storage",
+            ],
+            shared_libs: [
+                "libqmi_csi",
+                "libqmi_common_so",
+                "libcutils",
+                "liblog",
+                "libmdmdetect",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "sct_service",
+    owner: "sony",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/sct_service",
+            ],
+            shared_libs: [
+                "libqmi_csi",
+                "libqmi_common_so",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
                 "libm",
                 "libdl",
             ],
@@ -26741,6 +25820,44 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "slim_daemon",
+    owner: "sony",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/slim_daemon",
+            ],
+            shared_libs: [
+                "libgps.utils",
+                "liblog",
+                "libdiag",
+                "libqmi_csi",
+                "libqmi_cci",
+                "libqmi_common_so",
+                "libqmi_encdec",
+                "libutils",
+                "libsensorndkbridge",
+                "android.hardware.sensors@1.0",
+                "android.frameworks.sensorservice@1.0",
+                "libloc_api_v02",
+                "libloc_core",
+                "liblbs_core",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "sscrpcd",
     owner: "sony",
     target: {
@@ -26814,6 +25931,36 @@ cc_prebuilt_binary {
                 "libmdmdetect",
                 "libcutils",
                 "libutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "ta_qmi_service",
+    owner: "sony",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/ta_qmi_service",
+            ],
+            shared_libs: [
+                "libqmi_csi",
+                "libqmi_common_so",
+                "libcutils",
+                "libta",
+                "libmiscta",
                 "liblog",
                 "libc++",
                 "libc",
